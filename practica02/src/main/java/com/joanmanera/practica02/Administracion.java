@@ -3,15 +3,19 @@ package com.joanmanera.practica02;
 public class Administracion {
     private Sorteo sorteo; // Llamo a esta clase para que la administración pueda hacer un sorteo.
     private Boleto boleto; // En esta clase guardare el boleto del jugador.
-    private int[] numerosAcertados; // Aqui guardaré los números que el jugador acierte para posteriormente mostrarlos por pantalla.
-    private boolean complementarioAcertado; // Esta variable la utilizaré para saber si el jugador ha hacertado el número. True si lo ha acertado o false si no lo ha hecho.
+    private int[] numerosAcertados; // Aqui guardaré los números que el jugador acierte para posteriormente
+                                    // mostrarlos por pantalla cuando toque un premio.
+    private boolean complementarioAcertado; // Esta variable la utilizaré para saber si el jugador ha acertado el
+                                            // complementario. True si lo ha acertado o false si no lo ha hecho.
     private boolean reintegroAcertado; // Lo mismo que en la variable anterior pero esta combrobará el reintegro.
-    private int aciertos; // En esta variable se guardará el número de aciertos al comparar el boleto ganador y el del jugador
+    private int aciertos; // En esta variable se guardará el número de aciertos al comparar el boleto
+                          // ganador y el del jugador
 
     public Administracion() {
         /*
-         *  Este contructor crea un nuevo sorteo y un nuevo boleto. También inicializa el array de los números acertados, al bolean de complementario  y
-         *  de reintegro y el entero del codigo de acierto.
+         * Este constructor crea un nuevo sorteo y un nuevo boleto. También inicializa
+         * el array de los números acertados, al bolean de complementario y de reintegro
+         * y el entero del codigo de acierto.
          */
         this.sorteo = new Sorteo();
         this.boleto = new Boleto();
@@ -22,38 +26,47 @@ public class Administracion {
     }
 
     public void comprarBoleto(int[] numeroDelClente) {
-        // Este método crea un nuevo objeto de la clase boleto con el número que le pasan como parametro.
+        // Este método crea un nuevo objeto de la clase boleto con el número que le
+        // pasan como parámetro.
         boleto = new Boleto(numeroDelClente);
     }
-    public void comprarBoleto(){
-        // Este método crea un nuevo objeto de la clase boleto pero con la combinación aleatoria.
+
+    public void comprarBoleto() {
+        // Este método crea un nuevo objeto de la clase boleto pero con la combinación
+        // aleatoria.
         boleto = new Boleto();
     }
 
     public void generarSorteo() {
-        // Este método llama a la función de hacerSorteo() de la clase sorteo que reinicia el bombo y vuelve a generar un nuevo sorteo.
+        // Este método llama a la función de hacerSorteo() de la clase sorteo que
+        // reinicia el bombo y vuelve a generar un sorteo.
         sorteo.hacerSorteo();
     }
 
     public Boleto getBoleto() {
-        // Este método devuelve el objeto boleto para que desde la clase Principal se pueda ver el boleto del jugador (su numero, su complementario y su reintegro).
+        // Este método devuelve el objeto boleto para que desde la clase Principal se
+        // pueda ver el boleto del jugador (su numero y su reintegro).
         return boleto;
     }
 
     public Sorteo getSorteo() {
-        // Este método devuelve el obeto de la clase sorteo para poder ver desde la clase Principal la combinación ganadora.
+        // Este método devuelve el objeto de la clase sorteo para poder ver desde la
+        // clase Principal la combinación ganadora.
         return sorteo;
     }
 
     public int comprobarBoleto() {
         /*
-         *  Este método comprueba si el boleto del jugador es premiado o no.
-         *  Primero comprueba si el reintegro lo ha acertado, luego si ha acertado el complementario y fialmente comprueba el numero.
-         *  El bucle recorre el array de la combinación ganadora y el del jugador. Si un numero se repite en los dos arrays, este se guarda en
-         *  un tercero (numerosAcertados) y el contador del codigoAciertos se incrementa. Si no se repite el numero no hace nada.
+         * Este método comprueba si el boleto del jugador es premiado o no. Primero
+         * comprueba si el reintegro lo ha acertado, luego si ha acertado el
+         * complementario y finalmente comprueba el número. El bucle recorre el array de
+         * la combinación ganadora y el del jugador. Si un número se repite en los dos
+         * arrays, este se guarda en un tercero (numerosAcertados) y el contador de
+         * codigoAciertos se incrementa. Si no se repite el número pasa al siguiente.
          *
-         *  Devuelve dependiendo de la cantidad de aciertos, un código de aciertos. Este luego servira para saber que premio le ha tocado al jugador.
-         *  Este código no sigue ningún orden.
+         * Devuelve dependiendo de la cantidad de aciertos, un código de aciertos. Este
+         * luego servira para saber que premio le ha tocado al jugador. Este código no
+         * sigue ningún orden.
          */
 
         reintegroAcertado = boleto.getReintegro() == sorteo.getReintegroGanador();
@@ -67,8 +80,8 @@ public class Administracion {
                 if (sorteo.getNumeroGanador()[i] == boleto.getNumero()[x]) {
                     numerosAcertados[aciertos] = sorteo.getNumeroGanador()[i];
                     aciertos++;
-                } else if (boleto.getNumero()[x] == sorteo.getComplementarioGanador()){
-                    complementarioAcertado =true;
+                } else if (boleto.getNumero()[x] == sorteo.getComplementarioGanador()) {
+                    complementarioAcertado = true;
                 }
             }
         }
@@ -101,8 +114,8 @@ public class Administracion {
 
     public void mostrarPremio(int codigoAciertos) {
         /*
-         *  A este método le pasan como parámetro el código de aciertos que le devuelve el método comprobarBoleto()
-         *  y muestra un mensaje según el número de aciertos.
+         * A este método le pasan como parámetro el código de aciertos que le devuelve
+         * el método comprobarBoleto() y muestra un mensaje según el número de aciertos.
          */
         System.out.println();
         switch (codigoAciertos) {
