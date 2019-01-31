@@ -2,6 +2,7 @@ package com.joanmanera.practica02;
 
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Principal {
     private static Scanner lector = new Scanner(System.in); // Creo un nuevo scanner para que se pueda utilizar en toda la clase
@@ -157,13 +158,14 @@ public class Principal {
          *  Genera un nuevo sorteo, comprueba el boleto, si el boleto tiene premio lo puestra y
          *  finalmente muestra los dos boletos, el del jugador y el boleto ganador.
          */
-        fecha1 = new GregorianCalendar();
+
 
         Lib.limpiarPantalla();
         System.out.println("JUEGO ÚNICO");
         System.out.println("-----------");
         System.out.println();
 
+        fecha1 = new GregorianCalendar();
         administracion.generarSorteo();
 
         administracion.mostrarPremio(administracion.comprobarBoleto());
@@ -171,7 +173,7 @@ public class Principal {
         verLosDosBoletos();
 
         fecha2 = new GregorianCalendar();
-        System.out.println("El tiempo transcurrido ha sido de: " + (fecha2.getTimeInMillis()-fecha1.getTimeInMillis())+" ms");
+        System.out.println("El tiempo transcurrido ha sido de: "+convertirTiempo(fecha2.getTimeInMillis()-fecha1.getTimeInMillis()));
     }
 
 
@@ -182,6 +184,7 @@ public class Principal {
          *  Genera un sorteo y comprueba el boleto. Comprueba el codigo del premio (0 = no premio), si tiene premio
          *  lo muestra y si no lo tiene, suma uno al contador de tiradas y repite el proceso hasta que
          */
+
         int codigoAciertos = 0;
 
         Lib.limpiarPantalla();
@@ -189,6 +192,7 @@ public class Principal {
         System.out.println("--------------------------");
         System.out.println();
 
+        fecha1 = new GregorianCalendar();
         contadorTiradas = 1;
         while (codigoAciertos == 0) {
 
@@ -203,9 +207,12 @@ public class Principal {
                 contadorTiradas++;
             }
         }
+        fecha2 = new GregorianCalendar();
+        System.out.println("El tiempo transcurrido ha sido de: "+convertirTiempo(fecha2.getTimeInMillis()-fecha1.getTimeInMillis()));
     }
 
     private static void opcion3() {
+
         int codigoAciertos = 0;
 
         Lib.limpiarPantalla();
@@ -213,6 +220,7 @@ public class Principal {
         System.out.println("----------------------------------------");
         System.out.println();
 
+        fecha1 = new GregorianCalendar();
         contadorTiradas = 1;
         while (codigoAciertos == 0 || codigoAciertos == 7) {
 
@@ -226,6 +234,8 @@ public class Principal {
                 contadorTiradas++;
             }
         }
+        fecha2 = new GregorianCalendar();
+        System.out.println("El tiempo transcurrido ha sido de: "+convertirTiempo(fecha2.getTimeInMillis()-fecha1.getTimeInMillis()));
     }
 
     private static void opcion4() {
@@ -245,6 +255,7 @@ public class Principal {
         } while (numeroCiclos < 1 || numeroCiclos > 1000000000);
 
         do{
+            fecha1 = new GregorianCalendar();
             int contadorPremio5 = 0;
             int contadorPremio4 = 0;
             int contadorPremio3 = 0;
@@ -295,6 +306,9 @@ public class Principal {
             System.out.println("Premio reintegro: " + contadorPremioReintegro);
             System.out.println("Beneficio: "+((contadorPremioReintegro+(contadorPremio5*8)+(contadorPremio4*73)+(contadorPremio3*2627)+(contadorPremio2*64534)+(contadorPremio1*1468716)+(contadorPremioEspecial*53235749)-numeroCiclos)));
 
+            fecha2 = new GregorianCalendar();
+            System.out.println("El tiempo transcurrido ha sido de: "+convertirTiempo(fecha2.getTimeInMillis()-fecha1.getTimeInMillis()));
+
             do {
                 System.out.print("\n¿Deseas volver a repetir el mismo ciclo? Si o No : ");
                 aux = lector.nextLine().charAt(0);
@@ -311,6 +325,7 @@ public class Principal {
         System.out.println();
 
         System.out.println("Generando sorteos...");
+        fecha1 = new GregorianCalendar();
 
         contadorTiradas = 1;
         while (codigoAciertos != 6) {
@@ -326,6 +341,9 @@ public class Principal {
 
         verLosDosBoletos();
         System.out.println("\nEl boleto ha sido premiado en la tirada número: " + contadorTiradas);
+
+        fecha2 = new GregorianCalendar();
+        System.out.println("El tiempo transcurrido ha sido de: "+convertirTiempo(fecha2.getTimeInMillis()-fecha1.getTimeInMillis()));
 
     }
 
@@ -405,5 +423,26 @@ public class Principal {
         System.out.println("4º premio - 71,49 €");
         System.out.println("5º premio - 8 €");
         System.out.println("Reintegro - 1 €");
+    }
+    public static String convertirTiempo(long millis) {
+        if(millis < 0) {
+            throw new IllegalArgumentException("Duration must be greater than zero!");
+        }
+
+
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(millis);
+        millis -= TimeUnit.MINUTES.toMillis(minutes);
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(millis);
+        millis -= TimeUnit.SECONDS.toMillis(seconds);
+
+        StringBuilder sb = new StringBuilder(64);
+        sb.append(minutes);
+        sb.append(" Minutos, ");
+        sb.append(seconds);
+        sb.append(" Segundos y ");
+        sb.append(millis);
+        sb.append(" Milisegundos");
+
+        return(sb.toString());
     }
 }

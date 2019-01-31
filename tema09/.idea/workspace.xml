@@ -4,7 +4,6 @@
     <list default="true" id="63e8c970-a186-4686-8a68-eaa6c539537d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../practica02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../practica02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../practica02/src/main/java/com/joanmanera/practica02/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practica02/src/main/java/com/joanmanera/practica02/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -133,7 +132,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,6 +178,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,7 +255,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="706" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21060605" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21363637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
