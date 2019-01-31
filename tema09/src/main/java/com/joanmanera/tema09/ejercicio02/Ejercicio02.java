@@ -1,20 +1,23 @@
-package com.joanmanera.tema09.ejercicio01;
+package com.joanmanera.tema09.ejercicio02;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Ejercicio01 {
-    public Ejercicio01(){
-        int numero = 1;
-        boolean verificado;
+public class Ejercicio02 {
+    public Ejercicio02(){
         Scanner lector = new Scanner(System.in);
+        int numero;
+        boolean verificado;
+        int max = Integer.MIN_VALUE;
 
-        while (numero >= 0 ) {
-
+        for(int i = 0 ; i < 10; i++){
             do{
                 try{
                     System.out.print("Introduce un numero: ");
                     numero = Integer.parseInt(lector.nextLine());
+                    if(numero > max){
+                        max = numero;
+                    }
                     verificado = true;
                 } catch (InputMismatchException e){
                     System.out.println("El caracter introducido no es un numero");
@@ -26,5 +29,7 @@ public class Ejercicio01 {
 
             } while (!verificado);
         }
+
+        System.out.println("El numero mas grande ha sido el: "+max);
     }
 }
