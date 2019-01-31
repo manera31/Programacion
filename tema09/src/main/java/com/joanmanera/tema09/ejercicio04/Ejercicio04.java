@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Ejercicio04 {
 
     public Ejercicio04(){
-        int[] array = new int[5];
+        int[] array = null;
         try {
             introducirNumerosArray(array);
         } catch (NullPointerException npe){
