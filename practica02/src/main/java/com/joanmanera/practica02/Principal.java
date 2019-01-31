@@ -1,11 +1,13 @@
 package com.joanmanera.practica02;
 
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Principal {
     private static Scanner lector = new Scanner(System.in); // Creo un nuevo scanner para que se pueda utilizar en toda la clase
     private static int contadorTiradas; // Aqui se guardará el número de tiradas que ha sido necesario hasta llegar al premio. Lo defino fuera porque lo utilizo en varios métodos.
     private static Administracion administracion = new Administracion(); // Creo un objeto nuevo de la clase Administracion. Este lo utilizaré siempre.
+    private static GregorianCalendar fecha1, fecha2;
 
     public static void main(String[] args) {
         /*
@@ -155,6 +157,8 @@ public class Principal {
          *  Genera un nuevo sorteo, comprueba el boleto, si el boleto tiene premio lo puestra y
          *  finalmente muestra los dos boletos, el del jugador y el boleto ganador.
          */
+        fecha1 = new GregorianCalendar();
+
         Lib.limpiarPantalla();
         System.out.println("JUEGO ÚNICO");
         System.out.println("-----------");
@@ -165,6 +169,9 @@ public class Principal {
         administracion.mostrarPremio(administracion.comprobarBoleto());
 
         verLosDosBoletos();
+
+        fecha2 = new GregorianCalendar();
+        System.out.println("El tiempo transcurrido ha sido de: " + (fecha2.getTimeInMillis()-fecha1.getTimeInMillis())+" ms");
     }
 
 
