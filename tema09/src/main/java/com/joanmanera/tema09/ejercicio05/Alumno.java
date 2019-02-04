@@ -22,4 +22,8 @@ public class Alumno {
     public float getAltura() {
         return altura;
     }
+
+    public String toString(){
+        return "Alumno "+nombre+", edad "+edad+", altura "+altura;
+    }
 }

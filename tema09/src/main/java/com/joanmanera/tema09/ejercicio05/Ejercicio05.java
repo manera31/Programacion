@@ -16,13 +16,15 @@ public class Ejercicio05 {
         pedirDatos();
         Alumno al2 = new Alumno(nombre, edad, altura);
 
-        System.out.println("Nombre del alumno: "+al1.getNombre()+" Edad: "+al1.getEdad() + " Altura: "+al1.getAltura());
-        System.out.println("Nombre del alumno: "+al2.getNombre()+" Edad: "+al2.getEdad() + " Altura: "+al2.getAltura());
+        System.out.println(al1.toString());
+        System.out.println(al2.toString());
 
         if(al1.getEdad() > al2.getEdad()){
             System.out.println("El alumno "+al1.getNombre()+" es mayor");
-        } else {
+        } else if (al1.getEdad() < al2.getEdad()) {
             System.out.println("El alumno "+al2.getNombre()+" es mayor");
+        } else {
+            System.out.println("Los alumnos "+al1.getNombre()+" y "+al2.getNombre()+" tienen la misma edad");
         }
 
     }
