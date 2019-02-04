@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b1e1dfc-f1cc-47ca-a156-567930ced634" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tema09/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tema09/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tema09/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tema09/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tema09/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tema09/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tema09/src/main/java/com/joanmanera/tema09/ejercicio05/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tema09/src/main/java/com/joanmanera/tema09/ejercicio05/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tema09/src/main/java/com/joanmanera/tema09/ejercicio05/Ejercicio05.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tema09/src/main/java/com/joanmanera/tema09/ejercicio05/Ejercicio05.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -50,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/joanmanera/practica02/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
-              <caret line="441" column="32" selection-start-line="441" selection-start-column="32" selection-end-line="441" selection-end-column="32" />
+            <state relative-caret-position="345">
+              <caret line="483" column="32" selection-start-line="483" selection-start-column="32" selection-end-line="483" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,8 +138,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,9 +251,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="706" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27771854" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28181818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -269,7 +262,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298791" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33586133" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33448875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -363,8 +356,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/joanmanera/practica02/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="441" column="32" selection-start-line="441" selection-start-column="32" selection-end-line="441" selection-end-column="32" />
+        <state relative-caret-position="345">
+          <caret line="483" column="32" selection-start-line="483" selection-start-column="32" selection-end-line="483" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
