@@ -1,5 +1,8 @@
 package com.joanmanera.tema09.ejercicio08;
 
+import java.io.IOException;
+import java.util.Random;
+
 public class Ejercicio08 {
     public Ejercicio08(){
         int numero = 2;
@@ -17,11 +20,28 @@ public class Ejercicio08 {
                 System.out.println("El valor de esta posición es null");
                 return;
             } catch (ArithmeticException ae){
-                System.out.println("Arithmetic Exception, posible division por 0");
+                System.out.println("Arithmetic Exception, posible división por 0");
             } catch (IndexOutOfBoundsException iobe){
                 System.out.println("Ya has recorrido todo el array");
                 return;
             }
         }
+
+        try {
+            lanzaException();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NullPointerException ne) {
+            ne.printStackTrace();
+        }
+    }
+
+    public void lanzaException() throws IOException, NullPointerException {
+        Random r = new Random();
+        int x = r.nextInt(2);
+        if(x < 1)
+            throw new IOException();
+        else
+            throw new NullPointerException();
     }
 }

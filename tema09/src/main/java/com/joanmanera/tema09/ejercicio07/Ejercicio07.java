@@ -8,9 +8,7 @@ public class Ejercicio07 {
 
     private void mostrarCadenasArray(String[] array){
         for(int i = 0 ; i < array.length ; i++){
-            if (array[i] == null) {
-                System.out.println("El valor es null");
-            } else {
+            if (array[i] != null) {
                 System.out.println(array[i].charAt(0));
             }
         }
