@@ -9,6 +9,7 @@ import com.joanmanera.tema09.ejercicio06.Ejercicio06;
 import com.joanmanera.tema09.ejercicio07.Ejercicio07;
 import com.joanmanera.tema09.ejercicio08.Ejercicio08;
 import com.joanmanera.tema09.ejercicio09.Ejercicio09;
+import com.joanmanera.tema09.ejercicio10.Ejercicio10;
 
 public class Main {
     public static void main (String[] args){
@@ -20,6 +21,7 @@ public class Main {
         //Ejercicio06 ej06 = new Ejercicio06();
         //Ejercicio07 ej07 = new Ejercicio07();
         //Ejercicio08 ej08 = new Ejercicio08();
-        Ejercicio09 ej09 = new Ejercicio09();
+        //Ejercicio09 ej09 = new Ejercicio09();
+        Ejercicio10 ej10 = new Ejercicio10();
     }
 }
