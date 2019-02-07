@@ -7,6 +7,7 @@ public class Ejercicio10 {
     private int operando1;
     private int operando2;
     private Scanner lector = new Scanner(System.in);
+    private boolean verificado;
     public Ejercicio10(){
         int numero;
         do{
@@ -26,16 +27,36 @@ public class Ejercicio10 {
                     System.out.println("Multiplicación:");
                     pedirDatos();
                     System.out.println("Resultado: "+(operando1*operando2));
+
                     break;
                 case 4:
                     System.out.println("División:");
-                    pedirDatos();
-                    System.out.println("Resultado: "+(operando1/operando2));
+                    do {
+                        try{
+                            pedirDatos();
+                            System.out.println("Resultado: "+(operando1/operando2));
+                            verificado = true;
+                        } catch (ArithmeticException ae){
+                            System.out.println("Arithmetic Exception, posible división por 0");
+                            verificado = false;
+                        }
+
+                    } while (!verificado);
+
                     break;
                 case 5:
                     System.out.println("Resto de la división:");
-                    pedirDatos();
-                    System.out.println("Resultado: "+(operando1%operando2));
+                    do {
+                        try{
+                            pedirDatos();
+                            System.out.println("Resultado: "+(operando1%operando2));
+                            verificado = true;
+                        } catch (ArithmeticException ae){
+                            System.out.println("Arithmetic Exception, posible división por 0");
+                            verificado = false;
+                        }
+
+                    } while (!verificado);
                     break;
 
             }
@@ -48,7 +69,7 @@ public class Ejercicio10 {
         } while (numero != 0);
     }
     private void pedirDatos(){
-        boolean verificado;
+
         do{
             try{
                 System.out.print("Introduce el operando 1: ");
